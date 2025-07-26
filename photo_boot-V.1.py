@@ -47,7 +47,7 @@ def main():
 
     image_paths = []
     for i in range(3):
-        captured_image_path = f"/Users/thanayot/Documents/photobooth/captured_image_{i + 1}.jpg"
+        captured_image_path = f"/Users/thanayot/Documents/python/photo_booth-stupit/Selfie/captured_image_{i + 1}.jpg"
         
         while True:
             capture_image(cap, captured_image_path)
@@ -74,8 +74,8 @@ def main():
     cv2.destroyAllWindows()
 
     # Load background image
-    background = Image.open("/Users/thanayot/Documents/photobooth/bg.jpeg").convert("RGBA")
-    ef = Image.open("/Users/thanayot/Documents/photobooth/ef.png").convert("RGBA")
+    background = Image.open("/Users/thanayot/Documents/python/photo_booth-stupit/photo_template/bg.jpeg").convert("RGBA")
+    ef = Image.open("/Users/thanayot/Documents/python/photo_booth-stupit/photo_template/ef.png").convert("RGBA")
 
     # List of images to overlay with positions
     overlay_positions = [
@@ -105,7 +105,7 @@ def main():
     background.paste(ef, (0, 0), ef)
 
     # Save the result
-    background.save("/Users/thanayot/Documents/photobooth/result_image.png")
+    background.save("/Users/thanayot/Documents/python/photo_booth-stupit/Selfie/result_image.png")
 
     # Show the result
     background.show()
